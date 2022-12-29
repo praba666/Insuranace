@@ -1,0 +1,555 @@
+FONT PROPERTIES
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: normal;
+font-variant: small-caps;
+font-style: italic;
+font-size: 25px;
+font-weight: bolder;
+font: bold 18px Times New Roman;
+color:red ;
+
+
+BACKGROUD PROPERTES
+
+background: teal;
+color: white;
+background-image: url(6.jpg);
+background-repeat: no-repeat;
+background-size: 1400px 600px;
+background-size: cover;
+background: teal;
+color: white;
+
+background-image: url(6.jpg);
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-attachment: fixed;
+background-origin: content-box;
+background-origin: padding-box;
+background-origin: border-box;
+
+background: linear-gradient(red,yellow,green);
+background: linear-gradient(to right,red,yellow,green);
+background: linear-gradient(to left,red,yellow 10%,green 50%);
+background: linear-gradient(to top,red,yellow 10%,green 50%);
+background: repeating-linear-gradient(to top,red,yellow 10%,green 50%);
+background: radial-gradient(to top,red,yellow 10%,green 50%);
+
+div{
+width: 500px;
+height: 500px;
+background-image:linear-gradient(green,yellow,orange), url(6.jpg);
+background-size: cover;
+background-blend-mode: normal;
+background-blend-mode: screen;
+background-blend-mode: overlay;
+background-blend-mode: darken;
+background-blend-mode: hard-light;
+background-blend-mode: soft-light;
+background-blend-mode: exclusion;
+background-blend-mode: color;
+background-blend-mode: color-burn;
+background-blend-mode: color-dodge;
+
+
+
+OPACITY
+
+opacity: 1;
+opacity: 0.5;
+opacity: 0.6;
+opacity: 0.7;
+opacity: 0.8;
+opacity: 0.9;
+
+
+TEXT-PROPERTIES
+
+text-align: justify;
+text-indent: 40px;
+line-height: 40px;
+vertical-align: sub;
+vertical-align: super;
+letter-spacing: 5px;
+text-transform: uppercase;
+text-align: center;
+text-decoration: underline;
+
+LIST-PROPERTIES
+
+list-style-type: decimal;
+list-style-type: decimal-leading-zero;
+list-style-type: lower-roman;
+list-style-type: upper-roman;
+list-style-type: lower-alpha;
+list-style-type: upper-alpha;
+list-style-image: url(1.jpg);
+list-style-type: none;
+
+ul li{
+ list-style-type: decimal;
+ /* list-style-image: url(1.jpg); */
+ list-style-type: none;
+ }
+ul li::before{
+  content: '';
+  display: inline-block;
+  margin-right: 10px;
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  background-image: url(10.jpg);
+  background-size: cover;
+      }
+
+list-style-position:inside ;
+list-style-position:outside ;
+list-style-position:initial ;
+  
+MARGIN PROPERTIES
+
+margin-top: 75px;
+margin-left: 75px;
+margin: 10px 25px 30px 50px;
+	top, right,bottom,left
+margin: 25px 30px ;
+	top and bottom , left and right
+
+margin: 25px 15px 45px;
+	top,horizontal(left and right),bottom
+
+PADDING PROPERTIES
+
+padding-top: 75px;
+padding-left: 75px;
+padding: 10px 25px 30px 50px;
+padding: 25px 30px ;
+padding: 25px 15px 45px;
+
+
+BORDER PROPERTIES
+
+border-top-width: 15px;
+border-top-color: blue;
+border-top-style: dashed;
+border-bottom-width: 15px;
+border-bottom-color: red;
+border-bottom-style: dashed;
+border-right-width: 20px;
+border-right-color: green;
+border-right-style: dashed;
+border-left-width: 20px;
+border-left-color: orange;
+border-left-style: dashed;
+
+
+DISPLAY PROPERTIES
+
+display:inline;
+display:inline-block;
+display:block;
+
+
+
+TABLE
+
+table tr:nth-of-type-(even){
+background-color:red;
+}
+
+table td:nth-of-type(even){
+background-color:red;
+}
+
+
+PSEUDO CLASS IN CSS
+a:hover{
+color: red;
+}
+
+a:active{
+color: orangered;
+}
+
+a:visited{
+color: brown;
+}
+
+
+ACCESS CHILD IN CSS
+
+ul li:first-child{
+color: red;
+}
+ul li:last-child{
+color: yellow;
+}
+ul li:nth-child(3){
+color: brown;
+}
+
+BORDER RADIUS
+
+border-radius: 0px 40px 0px 40px;
+border-radius: 30px
+
+
+BOX SHADOW
+
+box-shadow: 5px 5px 10px 0px red;
+
+
+POSITIONS
+
+position: relative;
+left: 20px;
+top: 20px;
+right: 3px;
+bottom:2px;
+
+
+.main{
+ border: 5px solid gray;
+ width: 500px;
+ height: 500px;
+ font-weight: bold;
+ position: relative;
+ }
+.box1{
+ background-color: teal;
+ position: absolute;
+ right: 100px;
+     
+ }
+
+
+position: fixed;
+ top: 50px;
+ left: 50px;
+ }
+
+position: stickey;
+ top: 0px;
+ }
+
+
+OUTLINE IN BORDER
+
+outline-width: 8px;
+
+outline-style: groove;
+
+outline-offset: 2px;
+
+outline-color: aqua;		
+
+
+OVERFLOW
+
+overflow: scroll;
+overflow: auto;
+overflow-x: hidden;
+overflow-y: scroll;
+
+
+COLUMN 
+
+column-count: 3;
+
+column-gap: 30px;
+
+column-rule-width: 5px;
+
+column-rule-color: red;
+
+column-rule-style: dotted;
+
+column-span: none;
+
+column-span: all;
+
+
+PSEUDO CLASS SELECTOR
+
+  a:link{
+        color: red;
+      }
+      a:active{
+        color: green;
+      }
+      a:visited{
+        color: violet;
+      }
+      a:hover{
+        background-color: teal;
+      }
+
+PSEUDO CLASS SELECTOR (:target) 
+      p {
+        padding: 10px;
+        background-color: aliceblue;
+      }
+      p:target {
+        background-color: aqua;
+        color: red;
+      }
+
+PSEUDO CLASS SELECTOR (:focus)
+      #txt:focus{
+        outline: none;
+        border-color: green;
+      }
+
+
+    input[type="text"]:enabled{
+      background-color: red;
+    }
+    input[type="text"]:disabled{
+      background-color: orangered;
+    }
+    input[type="text"]:required{
+      background-color: green;
+    }
+    input[type="text"]:optional{
+      background-color: blue;
+    }
+
+
+     input[type="text"]:valid {
+        border-color: green;
+        color: black;
+      }
+      input[type="text"]:invalid {
+        border-color: red;
+        color: black;
+      }
+
+ <input type="text" id="txt" placeholder="Enter the User name :"  pattern="[a-z]*" />
+
+
+
+ #d1 h2,
+      #d2 h1{
+        color: red;
+      }
+      :is(#d1,#d2) h2{
+        color: green;
+      }
+      :is(#d1,#d2) :is(h2,p){
+        color: blueviolet;
+      }
+      :is(#d1) h2:hover{
+        background-color: aquamarine;
+      }
+
+
+
+PSEUDEO ELEMENT SELECTOR
+
+::befor
+
+::after
+
+::first-letter
+
+::first-line
+
+::selection
+
+::placeholder
+
+
+
+input::placeholder{
+      color: red;
+      background-color: aqua;
+      font-size: larger;
+      }
+
+p::selection{
+    background-color: red;
+    color: white;
+   }
+
+p::first-letter{
+    font-size: larger;
+    font-weight: bold;
+    color: blue;
+   }
+
+p::first-line{
+    font-size: larger;
+    text-transform: capitalize;
+    color: blueviolet;
+   }
+
+
+BEFORE AND AFTER METHOD
+
+      .box {
+        background-color: aqua;
+        width: 300px;
+        height: 200px;
+        color: white;
+        position: relative;
+      }
+      .box::before {
+        content: 'Top View';
+        width: 100%;
+        height: 20px;
+        background-color: red;
+        position: absolute;
+        top: 0;
+      }
+      .box::after{
+        content: 'New Element';
+        width: 100%;
+        height: 20px;
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+
+TRANSITION PROPERTY
+
+  div{
+    width: 300px;
+    height: 300px;
+    background-color: orangered;
+    transition-property: width,height,background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 0.5s;
+   }
+   div:hover{
+    width: 500px;
+    height: 500px;
+    background: yellow;
+   }
+  
+     
+ div {
+        width: 300px;
+        height: 300px;
+        background-color: orangered;
+        transition-property: width, height, background;
+        transition-duration: 1s, 1s, 0.5s;
+        transition-timing-function: linear;
+        transition-delay: 0.5s;
+      }
+      div:hover {
+        width: 500px;
+        height: 500px;
+        background: yellow;
+      }
+
+
+
+div {
+        width: 300px;
+        height: 300px;
+        background-color: orangered;
+        transition:all 0.5s ease-in 0.5s;
+      }
+      div:hover {
+        width: 500px;
+        height: 500px;
+        background: yellow;
+      }
+
+
+FLEX-BOXES
+
+.container{
+        border: 2px solid red;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-direction: row-reverse;
+        flex-direction: column;
+        flex-direction: column-reverse;
+
+      }
+
+.box{
+        border: 1px solid blue;
+        font-size: 20px;
+        margin: 5px;
+        font-weight: bold;
+        padding: 30px;
+      }
+
+.box:nth-of-type(odd){
+        background-color: aqua;
+      }
+      
+
+display: flex;
+
+flex-direction: row;
+
+flex-wrap: wrap;
+
+flex-wrap: wrap-reverse;
+
+display: flex;
+
+flex-direction: row;
+
+
+(MAIN AXIS HORIZONTAL AXIS)
+
+
+justify-content: flex-start;
+
+justify-content: flex-end;
+
+justify-content: center;
+
+justify-content: space-between;
+
+justify-content: space-around;
+      
+
+(CROSS AXIS AOND VERTICAL AXIX)
+
+display: flex;
+
+flex-direction: row;
+
+flex-wrap: wrap;
+
+align-content: flex-start;
+
+align-content: flex-end;
+
+align-content: center;
+
+align-content: space-between;
+
+align-content: space-around;
+
+ORDER ITEM
+      .box:nth-child(1){
+        order: 5;
+      }.box:nth-child(2){
+        order: 1;
+      }.box:nth-child(3){
+        order: 4;
+      }.box:nth-child(4){
+        order: 1;
+      }.box:nth-child(5){
+        order: 3;
+      }
+
+
+
+
+
+
+
+
+
