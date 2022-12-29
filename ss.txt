@@ -1,0 +1,567 @@
+REACT APP CREATE 
+
+1.  First open the folder in the location(Create the Folder and SeLECT Correct Folder)
+
+2. npx create-react-app todo-app
+
+3. npm install react-bootstrap bootstrap --save
+
+
+
+
+################################
+
+
+
+
+
+1. Fisrt step go to the folder the open the cmd prompt 
+
+2. Give the command ------>  git init
+
+3. Its Created the .Git folder in the our project folder
+
+4. file add the command in ----> git add sample.txt
+
+5. git commit  -m "Updeted code"   --->> This command used to the assurance the file
+
+6. git remote add origin https://github.com/praba666/JAVA.git ----> This command take in git hub 
+
+7. git push -u origin master ---> Then ask the username password then File Saved
+
+8. git log  ---> This command status in our procedure or history
+  
+   git --oneline
+
+9. git pull  ---> This Command line if any changes in other person change in our project  file we indicate the we get modify the content
+                 then we will see 
+
+10. git checkout -b "myworks"  --> This command line used to copy file in mater file to branch file we can access
+
+
+11. git checkout master  --- This commad line used in master copy no changes in that file only modify the branch file modify
+
+12. git checkout myworks  --> Chnages output will show
+
+13. git merge myworks  ---> This command works in branch file changes all c\send in master copy
+
+
+
+########################     Djangooooo   ################## 
+
+
+1. django-admin --version ....> to find django version
+   
+2. pip install django
+
+3. django-admin startproject django_project   ---> To Project Create
+
+4. python -m venv Django-Venv  ---->  To virtual environment create
+
+5. Microsoft Windows [Version 10.0.18362.175]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Desktop
+
+C:\Users\Admin\Desktop>python -m venv Django-Venv
+
+C:\Users\Admin\Desktop>cd Django_Venv
+The system cannot find the path specified.
+
+C:\Users\Admin\Desktop>cd Django-Venv
+
+C:\Users\Admin\Desktop\Django-Venv>cd Scripts
+
+C:\Users\Admin\Desktop\Django-Venv\Scripts>Activate
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv\Scripts>
+
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv>python -m pip install django
+Collecting django
+
+6. python manage.py runserver ------> to start a project command
+
+
+7. Application create File 
+
+8. python manage.py startapp myapplication to create a Applicateion
+
+9. application create after to set a setting.py we register the application name mention in the installed apps
+
+
+##################################
+
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    msg="<h1>Welcome To Django FrameWorks World</h1>"
+    return HttpResponse(msg)
+def index(request):
+    return HttpResponse("<h1> This is Index Page </h1>")
+
+#######
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    return render(request,"home.html",{'Name':'Prabakaran'})
+########### TEMPLATE FOLDER CREATE FOR HTML FILES ADD CONTENT #####################
+
+from pathlib import Path
+import os 
+
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,"templetes")],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+########################
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    return render(request,"home.html")
+
+def product(request):
+    Mobiles=int(request.GET["mobile"])
+    Keyboards=int(request.GET["keyboard"])
+    Monitors=int(request.GET["monitor"])
+    Price=Mobiles+Keyboards+Monitors
+    return render(request,"result.html",{"Prices":Price})
+
+######################## GET AND POST METHOD #######################
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    return render(request,"home.html")
+
+def registers(request):
+    Name=request.GET['name']
+    Password=request.GET['pass']
+    Address=request.GET['add']
+    Mail=request.GET['mail']
+
+    return render(request,"output.html",{'Names':Name,
+    'Passwords':Password,
+    'Addresss':Address,'Mails':Mail
+    })
+
+#######################
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    return render(request,"home.html")
+
+def registers(request):
+    Name=request.POST['name']
+    Password=request.POST['pass']
+    Address=request.POST['add']
+    Mail=request.POST['mail']
+
+    return render(request,"output.html",{'Names':Name,
+    'Passwords':Password,
+    'Addresss':Address,'Mails':Mail
+    })
+
+
+####
+ <form action="register" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <table class="center">
+                <tr>
+       
+########################   Static Files Created #############
+In setting,py 
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    ]
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    {% load static %}
+</head>
+<body>
+    <img src="{% static 'Image/4.jpg' %}">
+    <img src="{% static 'Image/5.jpg' %}">
+    <img src="{% static 'Image/6.jpg' %}">
+    
+</body>
+</html>
+#######
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <center><h1>Static Files (Django)</h1></center>
+    <img src="{% static 'Image/4.jpg' %}">
+    <img src="{% static 'Image/5.jpg' %}">
+    <img src="{% static 'Image/6.jpg' %}">
+
+    
+</body>
+</html>
+#################   BOOTSTRAP  FILES ADDED  ##################
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="well">
+        <center><h1>Bootstrap Files (Django)</h1></center>
+        <button class="btn btn-success">Click Me</button>
+    </div>
+</body>
+</html>
+
+#############   ALERT MEASSGE BOX  ##############
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+</head>
+<body>
+    <div class="container-fluid well">
+        <div class="col-md-offset-4 col-md-4">
+            <h1 class="page-header text-primary text-center">Alert Message</h1>
+            {% if messages %}
+                {% for message in messages %}
+            
+                        <div class="alert alert-{{message.tags}}">
+                            {{message}}
+                        </div>
+                {% endfor %}
+            {% endif %}
+            <a class="btn btn-success" href="{% url 'Success' %}">Success</a>
+            <a class="btn btn-info" href="{% url 'Info' %}">Info</a>
+            <a class="btn btn-warning" href="{% url 'Warning' %}">Warning</a>
+            <a class="btn btn-danger" href="{% url 'Danger' %}">Danger</a>   ---> Not Working
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('.alert').hide(4000);
+    });
+</script>
+######
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.contrib import messages
+# Create your views here.
+
+def message(request):
+    return render(request,"home.html")
+
+def success(request):
+    messages.success(request,'This is Success Message')
+    return render(request,"home.html")
+def info(request):
+    messages.info(request,'This is Info Mesaages')
+    return render(request,'home.html')
+def warning(request):
+    messages.warning(request,'This is Warning Meassges')
+    return render(request,'home.html')
+
+#####################
+
+pip install django-crispy_forms   ------> This pakages is used for adminpanel forms input all fields change in bootstrap class added in admin panel forms...
+
+Go to setting.py to insert the comment 
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # 'myapplication',
+    # 'message'
+    'crispy_forms'
+]
+
+Next last end to import the pakeages
+
+
+CRISPY_TEMPLATE_PACK='bootstrap3'
+#######################################
+
+Model.py to create a table coloumns Then --> Migrtae  for Field generating Purpose
+
+python manage.py makemigrations Mysql_Crud then will ---> create model
+
+Then migration folder create in crud app to check in 00001-initial page all fields generte
+
+Next ------> python manage.py migrate this command all coloumns create in database
+
+pip install django-crispy-forms ---> to bootstrap format align Purpose
+
+
+
+#################################
+from email import message
+from pyexpat.errors import messages
+from django.shortcuts import redirect, render
+from .form import Myregisterform
+from django.contrib import messages
+from .models import RegisterForm
+# Create your views here.
+
+def home(request):
+    data=RegisterForm.objects.all()
+    if (data!=''):
+        return render(request,"home.html",{'data':data})
+    else:
+        return render(request,"home.html")
+
+def insert(request):
+    if request.method=='POST':
+        form=Myregisterform(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                messages.success(request,"Registration successfully Completed")
+
+                return redirect("Home")
+            except:
+                pass
+
+    else:
+        form=Myregisterform()
+    return render(request,"register.html",{'form':form})
+
+def update(request,id):
+    data=RegisterForm.objects.get(id=id)
+    if request.method=='POST':
+        name=request.POST['name']
+        age=request.POST['age']
+        address=request.POST['add']
+        conatct=request.POST['con']
+        email=request.POST['email']
+
+        data.name=name
+        data.age=age
+        data.address=address
+        data.contact=conatct
+        data.email=email
+        data.save()
+        messages.success(request,"Update Successfully Completed")
+        return redirect("Home")
+
+
+    return render(request,"update.html",{'data':data})
+
+
+
+def delete(request,id):
+    data=RegisterForm.objects.get(id=id)
+    data.delete()
+    messages.error(request,"Delete Successfully Completed")
+    return redirect("Home")
+##################### COOKIES SET ################
+from django import forms
+from django.shortcuts import render
+from django.http import HttpResponse
+# from .models import Employee
+from . import forms
+
+# Create your views here.
+# def home(request):
+#     form=forms.Empinfo()
+#     return render(request,"home.html",{'data':form})
+    
+def home(request):
+    count=request.COOKIES.get('count',0)
+    totalcount=int(count)+1
+    response=render(request,"home.html",{'count':totalcount})
+    response.set_cookie('count',totalcount)
+    return response
+
+############ SESSION id (COOKIES) MANAGEMENT ###############
+from django import forms
+from django.shortcuts import render
+from django.http import HttpResponse
+# from .models import Employee
+from . import forms
+
+# Create your views here.
+# def home(request):
+#     form=forms.Empinfo()
+#     return render(request,"home.html",{'data':form})
+    
+def home(request):
+    count=request.session.get('count',0)
+    totalcount=int(count)+1
+    request.session['count']=totalcount
+    return render(request,"home.html",{'count':totalcount})
+
+############ CRUD OPERATION IN MODELS(DATABSE  TO ADMIN REGISTER FOR ADMIN PANEL )####################
+from django.db import models
+
+# Create your models here.
+class Student(models.Model):
+    sNO=models.IntegerField()
+    sName=models.CharField(max_length=100)
+    sClass=models.IntegerField()
+    sAddress=models.CharField(max_length=100)
+######
+from django.contrib import admin
+from .models import Student
+# Register your models here.
+
+class StudentAdmin(admin.ModelAdmin):
+    list=['sNo','sName','sClass','sAddress']
+
+admin.site.register(Student,StudentAdmin)
+
+######  Then Create superuser command
+
+
+#################################
+  Using cached Django-4.1.2-py3-none-any.whl (8.1 MB)
+Collecting tzdata
+  Using cached tzdata-2022.4-py2.py3-none-any.whl (336 kB)
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.4.3-py3-none-any.whl (42 kB)
+Collecting asgiref<4,>=3.5.2
+  Using cached asgiref-3.5.2-py3-none-any.whl (22 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.5.2 django-4.1.2 sqlparse-0.4.3 tzdata-2022.4
+WARNING: You are using pip version 22.0.4; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\Admin\Desktop\Django-Venv\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv>pip list
+Package    Version
+---------- -------
+asgiref    3.5.2
+Django     4.1.2
+pip        22.0.4
+setuptools 58.1.0
+sqlparse   0.4.3
+tzdata     2022.4
+WARNING: You are using pip version 22.0.4; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\Admin\Desktop\Django-Venv\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv>cd Scripts
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv\Scripts>Deactivate
+C:\Users\Admin\Desktop\Django-Venv\Scripts>
+
+
+
+Microsoft Windows [Version 10.0.18362.175]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Desktop
+
+C:\Users\Admin\Desktop>python -m venv Django-venv1
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\venv\__main__.py", line 6, in <module>
+    main()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\venv\__init__.py", line 501, in main
+    builder.create(d)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\venv\__init__.py", line 75, in create
+    self._setup_pip(context)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\venv\__init__.py", line 313, in _setup_pip
+    subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\subprocess.py", line 420, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\subprocess.py", line 503, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\subprocess.py", line 1136, in communicate
+    stdout = self.stdout.read()
+KeyboardInterrupt
+^C
+C:\Users\Admin\Desktop>cd Django-venu1
+The system cannot find the path specified.
+
+C:\Users\Admin\Desktop>cd Django-venv1
+
+C:\Users\Admin\Desktop\Django-venv1>cd Scripts
+
+C:\Users\Admin\Desktop\Django-venv1\Scripts>Activate
+'Activate' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Desktop\Django-venv1\Scripts>Activate
+'Activate' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Desktop\Django-venv1\Scripts>cd ..
+
+C:\Users\Admin\Desktop\Django-venv1>cd ..
+
+C:\Users\Admin\Desktop>cd Django-Venv
+
+C:\Users\Admin\Desktop\Django-Venv>cd Scripts
+
+C:\Users\Admin\Desktop\Django-Venv\Scripts>Activate
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv\Scripts>python -m django --version
+4.1.2
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv\Scripts>ccls
+'ccls' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Django-Venv) C:\Users\Admin\Desktop\Django-Venv\Scripts>cd   
+
+
+
+ctrl + shift + P enter the edith and find next go to project scripts file next python file selected now virutual environment created
+
